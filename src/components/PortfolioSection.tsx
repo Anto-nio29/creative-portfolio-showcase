@@ -1,28 +1,13 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import project1 from "@/assets/project-1.jpg";
-import project2 from "@/assets/project-2.jpg";
-import project3 from "@/assets/project-3.jpg";
-import project4 from "@/assets/project-4.jpg";
+import { useNavigate } from "react-router-dom";
+import { projects } from "@/data/projects";
 
-interface Project {
-  title: string;
-  category: string;
-  year: string;
-  image: string;
-}
-
-const projects: Project[] = [
-  { title: "Architettura Digitale", category: "Design & Development", year: "2024", image: project1 },
-  { title: "Studio Editorial", category: "Art Direction", year: "2024", image: project2 },
-  { title: "Brand Identity", category: "Branding & Design", year: "2023", image: project3 },
-  { title: "Scultura Astratta", category: "Interactive Experience", year: "2023", image: project4 },
-];
-
-const ProjectItem = ({ project, index }: { project: Project; index: number }) => {
+const ProjectItem = ({ project, index }: { project: typeof projects[0]; index: number }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [isHovered, setIsHovered] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <motion.div
@@ -33,6 +18,7 @@ const ProjectItem = ({ project, index }: { project: Project; index: number }) =>
       className="group border-t border-border py-6 md:py-8 cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={() => navigate(`/work/${project.slug}`)}
     >
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-baseline gap-4 md:gap-8">
@@ -41,7 +27,7 @@ const ProjectItem = ({ project, index }: { project: Project; index: number }) =>
           </span>
           <motion.h3
             animate={{ x: isHovered ? 20 : 0 }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
             className="font-display text-2xl md:text-4xl lg:text-5xl font-bold text-foreground"
           >
             {project.title}
@@ -80,7 +66,7 @@ const PortfolioSection = () => {
         <motion.div
           initial={{ y: "100%" }}
           animate={isInView ? { y: 0 } : {}}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
           className="flex items-baseline gap-4"
         >
           <h2 className="font-display text-sm uppercase tracking-[0.2em] text-muted-foreground">
@@ -92,7 +78,7 @@ const PortfolioSection = () => {
 
       <div>
         {projects.map((project, index) => (
-          <ProjectItem key={project.title} project={project} index={index} />
+          <ProjectItem key={project.slug} project={project} index={index} />
         ))}
         <div className="border-t border-border" />
       </div>
