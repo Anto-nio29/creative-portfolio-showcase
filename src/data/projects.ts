@@ -56,7 +56,10 @@ export const projects: Project[] = [
     client: "Fashion House",
     role: "Art Direction & Development",
     tools: ["Figma", "React", "Framer Motion", "Photoshop"],
-    gallery: [project2, project2Detail],
+    gallery: [
+      { type: "image", src: project2 },
+      { type: "image", src: project2Detail },
+    ],
   },
   {
     slug: "brand-identity",
