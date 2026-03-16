@@ -73,7 +73,10 @@ export const projects: Project[] = [
     client: "Luxury Brand",
     role: "Brand Design & Web Development",
     tools: ["Illustrator", "Figma", "React", "Tailwind"],
-    gallery: [project3, project3Detail],
+    gallery: [
+      { type: "image", src: project3 },
+      { type: "image", src: project3Detail },
+    ],
   },
   {
     slug: "scultura-astratta",
