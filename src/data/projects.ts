@@ -90,6 +90,9 @@ export const projects: Project[] = [
     client: "Galleria d'Arte",
     role: "Creative Development",
     tools: ["WebGL", "React", "Blender", "GLSL"],
-    gallery: [project4, project4Detail],
+    gallery: [
+      { type: "image", src: project4 },
+      { type: "image", src: project4Detail },
+    ],
   },
 ];
