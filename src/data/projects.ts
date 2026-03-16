@@ -7,6 +7,11 @@ import project2Detail from "@/assets/project-2-detail.jpg";
 import project3Detail from "@/assets/project-3-detail.jpg";
 import project4Detail from "@/assets/project-4-detail.jpg";
 
+export interface GalleryItem {
+  type: "image" | "video";
+  src: string;
+}
+
 export interface Project {
   slug: string;
   title: string;
@@ -18,7 +23,7 @@ export interface Project {
   client: string;
   role: string;
   tools: string[];
-  gallery: string[];
+  gallery: GalleryItem[];
 }
 
 export const projects: Project[] = [
