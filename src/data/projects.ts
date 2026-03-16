@@ -39,7 +39,10 @@ export const projects: Project[] = [
     client: "Studio Architettura",
     role: "Design & Frontend Development",
     tools: ["React", "Three.js", "GSAP", "Figma"],
-    gallery: [project1, project1Detail],
+    gallery: [
+      { type: "image", src: project1 },
+      { type: "image", src: project1Detail },
+    ],
   },
   {
     slug: "studio-editorial",
