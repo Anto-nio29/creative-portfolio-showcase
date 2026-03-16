@@ -7,6 +7,11 @@ import project2Detail from "@/assets/project-2-detail.jpg";
 import project3Detail from "@/assets/project-3-detail.jpg";
 import project4Detail from "@/assets/project-4-detail.jpg";
 
+export interface GalleryItem {
+  type: "image" | "video";
+  src: string;
+}
+
 export interface Project {
   slug: string;
   title: string;
@@ -18,7 +23,7 @@ export interface Project {
   client: string;
   role: string;
   tools: string[];
-  gallery: string[];
+  gallery: GalleryItem[];
 }
 
 export const projects: Project[] = [
@@ -34,7 +39,10 @@ export const projects: Project[] = [
     client: "Studio Architettura",
     role: "Design & Frontend Development",
     tools: ["React", "Three.js", "GSAP", "Figma"],
-    gallery: [project1, project1Detail],
+    gallery: [
+      { type: "image", src: project1 },
+      { type: "image", src: project1Detail },
+    ],
   },
   {
     slug: "studio-editorial",
@@ -48,7 +56,10 @@ export const projects: Project[] = [
     client: "Fashion House",
     role: "Art Direction & Development",
     tools: ["Figma", "React", "Framer Motion", "Photoshop"],
-    gallery: [project2, project2Detail],
+    gallery: [
+      { type: "image", src: project2 },
+      { type: "image", src: project2Detail },
+    ],
   },
   {
     slug: "brand-identity",
@@ -62,7 +73,10 @@ export const projects: Project[] = [
     client: "Luxury Brand",
     role: "Brand Design & Web Development",
     tools: ["Illustrator", "Figma", "React", "Tailwind"],
-    gallery: [project3, project3Detail],
+    gallery: [
+      { type: "image", src: project3 },
+      { type: "image", src: project3Detail },
+    ],
   },
   {
     slug: "scultura-astratta",
@@ -76,6 +90,9 @@ export const projects: Project[] = [
     client: "Galleria d'Arte",
     role: "Creative Development",
     tools: ["WebGL", "React", "Blender", "GLSL"],
-    gallery: [project4, project4Detail],
+    gallery: [
+      { type: "image", src: project4 },
+      { type: "image", src: project4Detail },
+    ],
   },
 ];
