@@ -75,7 +75,8 @@ const ProjectItem = ({ project, index }: { project: typeof projects[0]; index: n
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: isHovered ? 1 : 0, scale: isHovered ? 1 : 0.8 }}
             transition={{ duration: 0.3 }}
-            className="w-[240px] md:w-[320px] aspect-[4/5] overflow-hidden shadow-2xl"
+            /* MODIFICATO: larghezza aumentata e aspetto modificato da aspect-[4/5] a aspect-video */
+            className="w-[320px] md:w-[480px] aspect-video overflow-hidden shadow-2xl"
           >
             <img
               src={project.image}

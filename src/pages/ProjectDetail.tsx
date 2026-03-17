@@ -99,6 +99,28 @@ const ProjectDetail = () => {
             <p className="font-body text-lg md:text-xl leading-relaxed text-foreground">
               {project.description}
             </p>
+
+            {/* ---> ECCO LA MODIFICA! HO AGGIUNTO I LINK QUI SOTTO <--- */}
+            {project.links && project.links.length > 0 && (
+              <div className="mt-12">
+                <ul className="space-y-4">
+                  {project.links.map((link, i) => (
+                    <li key={i}>
+                      <a
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-display text-xl md:text-2xl text-foreground link-underline pb-1 inline-block"
+                      >
+                        {link.name} ↗
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {/* ---> FINE MODIFICA <--- */}
+
           </motion.div>
 
           {/* Details sidebar */}
@@ -187,7 +209,7 @@ const ProjectDetail = () => {
       <div className="px-6 md:px-12 pb-16">
         <div className="border-t border-border pt-8 flex items-center justify-between">
           <p className="font-body text-xs text-muted-foreground">
-            © 2024 — Tutti i diritti riservati
+            © 2026 — Tutti i diritti riservati
           </p>
           {(() => {
             const currentIndex = projects.findIndex((p) => p.slug === slug);

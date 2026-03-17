@@ -2,10 +2,10 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const socials = [
-  { name: "Instagram", url: "#" },
-  { name: "LinkedIn", url: "#" },
-  { name: "Twitter / X", url: "#" },
-  { name: "Dribbble", url: "#" },
+  { name: "Instagram", url: "https://www.instagram.com/tonio.fede/" },
+  //{ name: "LinkedIn", url: "#" },
+  //{ name: "Twitter / X", url: "#" },
+  //{ name: "Dribbble", url: "#" },
 ];
 
 const ContactSection = () => {
@@ -49,10 +49,10 @@ const ContactSection = () => {
               Email
             </p>
             <a
-              href="mailto:hello@tuosito.com"
+              href="mailto:anto7267@gmail.com"
               className="font-display text-xl md:text-2xl text-foreground link-underline pb-1 inline-block"
             >
-              hello@tuosito.com
+              anto7267@gmail.com
             </a>
           </motion.div>
 
@@ -96,7 +96,7 @@ const ContactSection = () => {
         className="mt-32 md:mt-48 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-t border-border pt-6"
       >
         <p className="font-body text-xs text-muted-foreground">
-          © 2024 — Tutti i diritti riservati
+          © 2026 — Tutti i diritti riservati
         </p>
         <p className="font-body text-xs text-muted-foreground">
           Designed & Developed with passion
