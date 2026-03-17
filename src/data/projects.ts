@@ -24,6 +24,8 @@ export interface Project {
   role: string;
   tools: string[];
   gallery: GalleryItem[];
+  link?: string;
+  linkLabel?: string;
 }
 
 export const projects: Project[] = [

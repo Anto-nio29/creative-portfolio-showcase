@@ -99,6 +99,16 @@ const ProjectDetail = () => {
             <p className="font-body text-lg md:text-xl leading-relaxed text-foreground">
               {project.description}
             </p>
+            {project.link && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-8 font-display text-xl md:text-2xl text-foreground link-underline pb-1"
+              >
+                {project.linkLabel || "Visita il progetto"} →
+              </a>
+            )}
           </motion.div>
 
           {/* Details sidebar */}
