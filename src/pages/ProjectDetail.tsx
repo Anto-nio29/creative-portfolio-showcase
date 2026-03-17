@@ -185,7 +185,7 @@ const ProjectDetail = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-          {project.gallery.map((img, i) => (
+          {project.gallery.map((item, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 40 }}
@@ -193,13 +193,22 @@ const ProjectDetail = () => {
               transition={{ duration: 0.8, delay: i * 0.15, ease }}
               className="overflow-hidden aspect-[4/3]"
             >
-              <motion.img
-                whileHover={{ scale: 1.04 }}
-                transition={{ duration: 0.6, ease }}
-                src={img}
-                alt={`${project.title} - ${i + 1}`}
-                className="w-full h-full object-cover"
-              />
+              {item.type === "video" ? (
+                <video
+                  src={item.src}
+                  controls
+                  playsInline
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <motion.img
+                  whileHover={{ scale: 1.04 }}
+                  transition={{ duration: 0.6, ease }}
+                  src={item.src}
+                  alt={`${project.title} - ${i + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              )}
             </motion.div>
           ))}
         </div>
